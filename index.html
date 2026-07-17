@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <h1 class="titulo">Minhas Tarefas</h1>
+
+    <form id="form-tarefa" class="form-tarefa">
+      <input type="text" id="input-texto" class="form-tarefa__texto" placeholder="O que você precisa fazer?" required>
+
+      <select id="input-categoria" class="form-tarefa__select">
+        <option value="Pessoal">Pessoal</option>
+        <option value="Estudo">Estudo</option>
+        <option value="Trabalho">Trabalho</option>
+        <option value="Outro">Outro</option>
+      </select>
+
+      <select id="input-prioridade" class="form-tarefa__select">
+        <option value="baixa">Prioridade baixa</option>
+        <option value="media" selected>Prioridade média</option>
+        <option value="alta">Prioridade alta</option>
+      </select>
+
+      <button type="submit" class="form-tarefa__botao">Adicionar</button>
+    </form>
+
+    <div class="filtros">
+      <select id="filtro-status" class="filtros__select">
+        <option value="todas">Todas</option>
+        <option value="pendentes">Pendentes</option>
+        <option value="concluidas">Concluídas</option>
+      </select>
+
+      <select id="filtro-prioridade" class="filtros__select">
+        <option value="todas">Qualquer prioridade</option>
+        <option value="alta">Alta</option>
+        <option value="media">Média</option>
+        <option value="baixa">Baixa</option>
+      </select>
+
+      <select id="filtro-categoria" class="filtros__select">
+        <option value="todas">Qualquer categoria</option>
+        <option value="Pessoal">Pessoal</option>
+        <option value="Estudo">Estudo</option>
+        <option value="Trabalho">Trabalho</option>
+        <option value="Outro">Outro</option>
+      </select>
+    </div>
+
+    <ul id="lista-tarefas" class="lista-tarefas"></ul>
+
+    <p id="mensagem-vazio" class="mensagem-vazio">Nenhuma tarefa encontrada.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
