@@ -3,60 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Tarefas</title>
+  <title>Quadro Kanban</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <main class="container">
-    <h1 class="titulo">Minhas Tarefas</h1>
+  <div class="app">
 
-    <form id="form-tarefa" class="form-tarefa">
-      <input type="text" id="input-texto" class="form-tarefa__texto" placeholder="O que você precisa fazer?" required>
+    <aside class="barra-lateral">
+      <h2 class="barra-lateral__titulo">Quadros</h2>
 
-      <select id="input-categoria" class="form-tarefa__select">
-        <option value="Pessoal">Pessoal</option>
-        <option value="Estudo">Estudo</option>
-        <option value="Trabalho">Trabalho</option>
-        <option value="Outro">Outro</option>
-      </select>
+      <ul id="lista-quadros" class="lista-quadros"></ul>
 
-      <select id="input-prioridade" class="form-tarefa__select">
-        <option value="baixa">Prioridade baixa</option>
-        <option value="media" selected>Prioridade média</option>
-        <option value="alta">Prioridade alta</option>
-      </select>
+      <form id="form-novo-quadro" class="form-novo-quadro">
+        <input type="text" id="input-novo-quadro" class="form-novo-quadro__input" placeholder="Novo quadro..." required>
+        <button type="submit" class="form-novo-quadro__botao">+</button>
+      </form>
+    </aside>
 
-      <button type="submit" class="form-tarefa__botao">Adicionar</button>
-    </form>
+    <div class="conteudo">
+      <header class="topo">
+        <h1 id="nome-quadro-atual" class="topo__titulo">Trabalho</h1>
+        <input type="search" id="busca-cartoes" class="topo__busca" placeholder="Buscar cartões...">
+      </header>
 
-    <div class="filtros">
-      <select id="filtro-status" class="filtros__select">
-        <option value="todas">Todas</option>
-        <option value="pendentes">Pendentes</option>
-        <option value="concluidas">Concluídas</option>
-      </select>
-
-      <select id="filtro-prioridade" class="filtros__select">
-        <option value="todas">Qualquer prioridade</option>
-        <option value="alta">Alta</option>
-        <option value="media">Média</option>
-        <option value="baixa">Baixa</option>
-      </select>
-
-      <select id="filtro-categoria" class="filtros__select">
-        <option value="todas">Qualquer categoria</option>
-        <option value="Pessoal">Pessoal</option>
-        <option value="Estudo">Estudo</option>
-        <option value="Trabalho">Trabalho</option>
-        <option value="Outro">Outro</option>
-      </select>
+      <main id="area-colunas" class="area-colunas"></main>
     </div>
 
-    <ul id="lista-tarefas" class="lista-tarefas"></ul>
-
-    <p id="mensagem-vazio" class="mensagem-vazio">Nenhuma tarefa encontrada.</p>
-  </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
